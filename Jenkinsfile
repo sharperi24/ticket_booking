@@ -56,22 +56,6 @@ pipeline {
                 """
             }
         }
-        
-        stage('Deploy to Kubernetes') {
-            steps {
-                echo 'Deploying to Kubernetes...'
-                bat """
-                    kubectl apply -f kubernetes/backend-deployment.yaml
-                    kubectl apply -f kubernetes/backend-service.yaml
-                    kubectl apply -f kubernetes/frontend-deployment.yaml
-                    kubectl apply -f kubernetes/frontend-service.yaml
-                    kubectl set image deployment/backend-deployment backend=${BACKEND_IMAGE}:${IMAGE_TAG}
-                    kubectl set image deployment/frontend-deployment frontend=${FRONTEND_IMAGE}:${IMAGE_TAG}
-                    kubectl rollout status deployment/backend-deployment
-                    kubectl rollout status deployment/frontend-deployment
-                """
-            }
-        }
     }
     
     post {
