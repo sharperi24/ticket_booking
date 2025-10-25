@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: tickethub-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tickethub-frontend
+  template:
+    metadata:
+      labels:
+        app: tickethub-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: sherry245/tickethub-frontend:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"

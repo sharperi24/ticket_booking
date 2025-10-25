@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: tickethub-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tickethub-backend
+  template:
+    metadata:
+      labels:
+        app: tickethub-backend
+    spec:
+      containers:
+      - name: backend
+        image: sherry245/tickethub-backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: FLASK_ENV
+          value: "production"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
