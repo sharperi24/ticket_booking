@@ -449,26 +449,6 @@ kubectl rollout status deployment/name
 - Rolling updates
 - Health checks
 
-## Screenshots Required for Assignment
-
-1. Git branch structure (`git log --graph --all`)
-2. Docker images built (`docker images`)
-3. Docker containers running (`docker ps`)
-4. Application in browser (Docker Compose)
-5. Docker Hub repositories
-6. Jenkins dashboard
-7. Jenkins credentials configured
-8. Jenkins pipeline configuration
-9. Minikube running (`minikube status`)
-10. Kubernetes resources (`kubectl get all`)
-11. Application via Kubernetes
-12. Scaled pods (`kubectl get pods`)
-13. Jenkins pipeline executing
-14. Jenkins pipeline success (all stages green)
-15. Updated pods after deployment
-16. Auto-triggered Jenkins build
-17. Updated application (new version)
-
 ## Security Considerations
 
 - Credentials stored securely in Jenkins
@@ -497,10 +477,6 @@ kubectl rollout status deployment/name
 - Add automated security scanning
 - Implement backup and disaster recovery
 
-## License
-
-MIT License
-
 ## Author
 
 Built for DevOps Assignment Demonstration
@@ -520,6 +496,4 @@ For issues and questions:
 - Check Docker logs
 - Verify Kubernetes events: `kubectl get events`
 
----
 
-**Note**: Replace `YOUR_USERNAME` and `YOUR_DOCKERHUB_USERNAME` with your actual usernames throughout this document.
